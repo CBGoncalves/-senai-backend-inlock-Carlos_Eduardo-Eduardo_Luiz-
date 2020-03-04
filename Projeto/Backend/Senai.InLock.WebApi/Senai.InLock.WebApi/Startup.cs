@@ -26,16 +26,7 @@ namespace Senai.InLock.WebApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "Senai.InLock.WebApi",
-                    Version = "v1"
-                });
-
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Senai.InLock.WebApi", Version = "v1" });
             });
 
 
@@ -68,7 +59,7 @@ namespace Senai.InLock.WebApi
                         ClockSkew = TimeSpan.FromMinutes(30),
 
                         // Nome da issuer, de onde está vindo
-                        ValidIssuer = "Senai.InLock.WebApii",
+                        ValidIssuer = "Senai.InLock.WebApi",
 
                         // Nome da audience, de onde está vindo
                         ValidAudience = "Senai.InLock.WebApi"
